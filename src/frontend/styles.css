@@ -1,1 +1,136 @@
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 2rem;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.bg-gradient {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, #2563eb, #0f172a);
+  z-index: -1;
+  animation: pulse 10s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { filter: brightness(1); }
+  100% { filter: brightness(1.2); }
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(0,0,0,0.4);
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.todo-form label {
+  font-weight: 600;
+}
+
+#todo-input {
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+}
+
+#todo-form button {
+  background-color: #22c55e;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#todo-form button:hover {
+  background-color: #16a34a;
+}
+
+.todo-list {
+  list-style: none;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.todo-list li {
+  background: #1e293b;
+  margin-bottom: 0.8rem;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-list li.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #f87171;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+}
+
+.contact {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.contact a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
