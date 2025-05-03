@@ -62,7 +62,7 @@ jobs:
         with:
           configPath: .lighthouserc.js
           uploadArtifacts: true
-          artifactName: lighthouse-report
+          artifactName: lighthousereport
           temporaryPublicStorage: true
 
   close_pull_request_job:
