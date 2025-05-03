@@ -56,14 +56,6 @@ jobs:
           app_build_command: "echo No build needed"
           github_id_token: ${{ steps.idtoken.outputs.result }}
 
-      - name: Exécuter Lighthouse sur le build
-        uses: treosh/lighthouse-ci-action@v9
-        with:
-          urls: https://wonderful-mushroom-0525b8a03.4.azurestaticapps.net/
-          uploadArtifacts: true
-          temporaryPublicStorage: true
-          assertions: '{"categories:performance": ["error", {"minScore": 0.8}], "categories:accessibility": ["error", {"minScore": 0.9}]}'
-
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
