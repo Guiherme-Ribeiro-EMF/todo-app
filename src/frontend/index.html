@@ -2,30 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Todo App ✨</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guilherme's Todo ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="app.js" defer></script>
 </head>
 <body>
-  <div class="app-container">
-    <div class="header">
-      <h1>📝 My Todo List</h1>
-      <p>Organize your tasks efficiently & stylishly</p>
-    </div>
+  <div class="bg-gradient"></div>
+
+  <main class="container">
+    <header>
+      <h1 class="title">📝 Guilherme's Todo List</h1>
+      <p class="subtitle">Organise ta journée avec style !</p>
+    </header>
 
     <form id="todo-form" class="todo-form">
-      <input type="text" id="todo-input" placeholder="Add a new task..." required />
-      <button type="submit">➕ Add Task</button>
+      <label for="todo-input">Nouvelle tâche :</label>
+      <input type="text" id="todo-input" placeholder="Ajouter une tâche..." required />
+      <button type="submit">Ajouter ➕</button>
     </form>
 
     <ul id="todo-list" class="todo-list"></ul>
 
-    <footer>
-      <p>Made with ❤️ by Gui</p>
-    </footer>
-  </div>
+    <section class="contact">
+      <h2>📬 Contact</h2>
+      <p>Besoin d'aide ? Écris-moi à :</p>
+      <a href="mailto:guilherme.ribeiro@studentfr.ch">guilherme.ribeiro@studentfr.ch</a>
+    </section>
+  </main>
+
+  <script>
+    // GSAP animations
+    gsap.from(".title", { y: -50, opacity: 0, duration: 1 });
+    gsap.from(".subtitle", { y: -20, opacity: 0, duration: 1.2, delay: 0.2 });
+    gsap.from(".todo-form", { opacity: 0, duration: 1, delay: 0.5 });
+    gsap.from(".contact", { y: 50, opacity: 0, duration: 1, delay: 0.8 });
+  </script>
 </body>
 </html>
