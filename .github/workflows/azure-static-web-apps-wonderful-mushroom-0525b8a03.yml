@@ -17,6 +17,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -55,6 +56,14 @@ jobs:
           output_location: "."
           app_build_command: "echo No build needed"
           github_id_token: ${{ steps.idtoken.outputs.result }}
+
+      - name: Exécuter Lighthouse CI sur la version en ligne
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          configPath: .lighthouserc.js
+          uploadArtifacts: true
+          artifactName: lighthouse-report
+          temporaryPublicStorage: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
