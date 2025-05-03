@@ -58,11 +58,18 @@ jobs:
           github_id_token: ${{ steps.idtoken.outputs.result }}
 
       - name: Exécuter Lighthouse CI sur la version en ligne
+        id: lhci
         uses: treosh/lighthouse-ci-action@v9
         with:
           configPath: .lighthouserc.js
           uploadArtifacts: true
           temporaryPublicStorage: true
+
+      - name: Afficher le lien du rapport Lighthouse
+        run: |
+          echo "🌐 Rapport Lighthouse disponible ici :"
+          echo "${{ steps.lhci.outputs.links }}"
+        if: always()
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
