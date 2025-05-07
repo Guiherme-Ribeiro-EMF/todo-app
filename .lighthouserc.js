@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      url: ['https://wonderful-mushroom-0525b8a03.4.azurestaticapps.net/'],
+      url: ['210.guirib.live'],
       startServerCommand: '', // Ne pas démarrer localement, on analyse le site déjà en ligne
     },
     assert: {
