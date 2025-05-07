@@ -68,8 +68,8 @@ jobs:
       - name: Afficher le lien du rapport Lighthouse
         run: |
           echo "🌐 Rapport Lighthouse disponible ici :"
-          echo " "
-          echo "${{ steps.lhci.outputs.links }}"
+          echo ""
+          echo "${{ steps.lhci.outputs.links }}" | grep -o 'https://storage.googleapis.com[^ ]*'
         if: always()
 
   close_pull_request_job:
