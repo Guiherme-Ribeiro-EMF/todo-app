@@ -68,6 +68,7 @@ jobs:
       - name: Afficher le lien du rapport Lighthouse
         run: |
           echo "🌐 Rapport Lighthouse disponible ici :"
+          echo " "
           echo "${{ steps.lhci.outputs.links }}"
         if: always()
 
