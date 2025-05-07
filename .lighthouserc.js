@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      url: ['210.guirib.live'],
+      url: ['https://210.guirib.live'],
       startServerCommand: '', // Ne pas démarrer localement, on analyse le site déjà en ligne
     },
     assert: {
